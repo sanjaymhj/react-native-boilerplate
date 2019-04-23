@@ -1,14 +1,14 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import LoginStack from './LoginStack';
-import WelcomeStack from './WelcomeStack';
+import loginStack from './loginStack';
+import welcomeStack from './welcomeStack';
 // import DashboardStack from './DashboardStack';
 
 import screens from '../screens';
 
 const topScreenStacks = {};
-topScreenStacks[screens.loginStack] = LoginStack;
-topScreenStacks[screens.welcomeStack] = WelcomeStack;
+topScreenStacks[screens.loginStack] = loginStack;
+topScreenStacks[screens.welcomeStack] = welcomeStack;
 // topScreenStacks[screens.dashboardStack] = DashboardStack;
 
 const RNApp = createAppContainer(
