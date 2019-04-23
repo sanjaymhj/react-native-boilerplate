@@ -1,22 +1,21 @@
-import { createStackNavigator } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Login from 'app/screens/Login';
-import Home from 'app/screens/Home';
+import LoginStack from './LoginStack';
+import WelcomeStack from './WelcomeStack';
+// import DashboardStack from './DashboardStack';
 
-const RNApp = createStackNavigator(
-    {
-        Login: {
-            screen: Login,
-            navigationOptions: { header: null, gesturesEnabled: false }
-        },
-        Home: {
-            screen: Home,
-            navigationOptions: { header: null, gesturesEnabled: false }
-        }
-    },
-    {
-        initialRouteName: 'Login'
-    }
+import screens from '../screens';
+
+const topScreenStacks = {};
+topScreenStacks[screens.loginStack] = LoginStack;
+topScreenStacks[screens.welcomeStack] = WelcomeStack;
+// topScreenStacks[screens.dashboardStack] = DashboardStack;
+
+const RNApp = createAppContainer(
+  createSwitchNavigator(
+    topScreenStacks,
+    { initialRouteName: screens.welcomeStack }
+  )
 );
 
 export default RNApp;
