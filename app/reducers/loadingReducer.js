@@ -2,7 +2,7 @@
  * Loading reducer made seperate for easy blacklisting
  * Avoid data persist
  */
-import createReduver from '../lib/createReducer';
+import createReducer from '../lib/createReducer';
 import * as types from '../actions/types';
 
 const initialState = {
